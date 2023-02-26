@@ -68,7 +68,8 @@ public class CCuenta {
     }
 
     /**
-     * @param nombre the nombre to set
+     * Actualiza el valor del atributo nombre
+     * @param nombre String
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;

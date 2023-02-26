@@ -2,7 +2,6 @@ package cuentas;
 
 public class CCuenta {
 
-
     private String nombre;
     private String cuenta;
     private double saldo;
@@ -10,27 +9,47 @@ public class CCuenta {
 
     public CCuenta()
     {
+        
     }
-
+    /**
+     * Crea una cuenta bancaria con los datos de los parámetros.
+     * @param nom String. Nombre del usuario de la cuenta
+     * @param cue String. Número de la cuenta.
+     * @param sal. Double. Saldo de la cuenta.
+     * @param tipo Double. Tipo de interés de la cuenta.
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
-        nombre =nom;
-        cuenta=cue;
-        saldo=sal;
+        nombre = nom;
+        cuenta= cue;
+        saldo = sal;
     }
-
+    
+    /**
+     * Devuelve el saldo actual de la cuenta.
+     * @return saldo Double.
+     */
     public double estado()
     {
         return getSaldo();
     }
 
+    /**
+     * Realiza un ingreso de la cantidad del parámetro
+     * @param cantidad Double.
+     * @throws Exception 
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
             throw new Exception("No se puede ingresar una cantidad negativa");
         setSaldo(getSaldo() + cantidad);
     }
-
+    /**
+     * Realiza una retirada de la cantidad del parámetro.
+     * @param cantidad Double.
+     * @throws Exception 
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
@@ -41,7 +60,8 @@ public class CCuenta {
     }
 
     /**
-     * @return the nombre
+     * Devuelve el valor del atributo nombre
+     * @return nombre String
      */
     public String getNombre() {
         return nombre;
@@ -55,42 +75,48 @@ public class CCuenta {
     }
 
     /**
-     * @return the cuenta
+     * Devuelve el valor del atributo cuenta.
+     * @return cuenta String
      */
     public String getCuenta() {
         return cuenta;
     }
 
     /**
-     * @param cuenta the cuenta to set
+     * Actualiza el valor del atributo cuenta.
+     * @param cuenta String
      */
     public void setCuenta(String cuenta) {
         this.cuenta = cuenta;
     }
 
     /**
-     * @return the saldo
+     * Devuelve el valor del atributo saldo.
+     * @return saldo Double
      */
     public double getSaldo() {
         return saldo;
     }
 
     /**
-     * @param saldo the saldo to set
+     * Actualiza el valor del atributo saldo.
+     * @param saldo Double
      */
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
     /**
-     * @return the tipoInterés
+     * Devuelve el valor del atributo tipoInterés.
+     * @return tipoInterés
      */
     public double getTipoInterés() {
         return tipoInterés;
     }
 
     /**
-     * @param tipoInterés the tipoInterés to set
+     * Actualiza el valor del atributo tipoInterés.
+     * @param tipoInterés Double
      */
     public void setTipoInterés(double tipoInterés) {
         this.tipoInterés = tipoInterés;
